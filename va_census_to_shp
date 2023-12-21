@@ -85,13 +85,15 @@ commute_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_pro
 
 ```{r Jobs for block}
 
-# Import the file "va_wac_S000_JT00_2020.csv" in the location "C:\Users\zach\Documents\r_stuff\census_to_shp_project"
-df_jobs <- read.csv("C:/Users/zach/Documents/r_stuff/census_to_shp_project/va_wac_S000_JT00_2020.csv")
+# Import the gzipped CSV files
+df_va <- read.csv(gzfile(va_file))
+df_md <- read.csv(gzfile(md_file))
+df_dc <- read.csv(gzfile(dc_file))
 
-# Concatenate data frames by columns
-#df_jobs <- cbind(df_va, df_md, df_dc) 
+# Concatenate data frames by rows (assuming all data frames have the same structure)
+df_jobs <- rbind(df_va, df_md, df_dc)
 
-# Drop row 2 of df_jobs because it is blank
+# Drop row 2 of df_jobs because it is blank (if applicable)
 df_jobs <- df_jobs[-2,]
 
 # Rename columns for better readability
@@ -104,16 +106,16 @@ column_mapping <- c(
 )
 names(df_jobs) <- column_mapping
 
-# Convert the "GEO_ID" column to string type
+# Convert the "w_geocode" column to string type
 df_jobs$w_geocode <- as.character(df_jobs$w_geocode)
 
 # Create a new column with the desired prefix and convert to string
 df_jobs$GEO_ID <- paste0('1000000US', df_jobs$w_geocode)
 
-# Create new column for jurisidction id
+# Create new column for jurisdiction id
 df_jobs$df_jurisdiction_id <- substr(df_jobs$GEO_ID, start = 10, stop = 14)
 
-# Filter the df_jobs data frame by the df_jurisdiction_id column
+# Filter the df_jobs data frame by the df_jurisdiction_id column (assuming 'jurisdiction_ids' is defined)
 df_jobs <- df_jobs[df_jobs$df_jurisdiction_id %in% jurisdiction_ids,]
 
 # Keep only needed columns
