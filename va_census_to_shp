@@ -6,7 +6,6 @@
 # some renaming and selection of columns and calculations are done also
 # focus on jobs, income, race, disability, language, and other demographics
 # considered relevant for transit service
-# Fairfax Connector
 # Functional improvements would be: 1) adding MD & DC .shp and .csv data 2) making column names .shp-compatible 3) AMEND TO CALCULATE NUMBER OF WORKERS EST, NOT JUST SUTAINABLE COMMUTERS
 
 ```
