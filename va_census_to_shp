@@ -47,9 +47,9 @@ shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 # JOBS - WORK LOCATIONS ONLY (WAC) - BLOCK
 # Data Source: US Census LODES/LEHD https://lehd.ces.census.gov/data/
 # File paths
-#va_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/va_wac_S000_JT00_2020.csv.gz"
-#md_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/md_wac_S000_JT00_2020.csv.gz"  
-#dc_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/dc_wac_S000_JT00_2020.csv.gz"
+va_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/va_wac_S000_JT00_2020.csv.gz"
+md_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/md_wac_S000_JT00_2020.csv.gz"  
+dc_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/dc_wac_S000_JT00_2020.csv.gz"
 
 
 
