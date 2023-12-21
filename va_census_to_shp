@@ -35,13 +35,9 @@ shapefile_export_path <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/
 
 # .shp data source: US Census https://www.census.gov/cgi-bin/geo/shapefiles/index.php
 
-# Specify the directory path to your census geography shapefile
+# import census geography shapefile
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
-
-# Specify the base file name of the shapefile (without file extensions)
 shapefile_name <- "tl_2022_51_tabblock20"
-
-# Combine the directory path and file name to get the full path to the shapefile
 shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
 
