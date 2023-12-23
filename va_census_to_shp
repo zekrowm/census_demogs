@@ -801,9 +801,16 @@ df_joined <- df_joined %>%
     est_grnwrk = tot_pop_block * as.numeric(sustainable_mode_workers_perc)
   )
 
+# Before exporting, rename the other columns to comply with ESRI Shapefile format
+df_joined <- df_joined %>%
+  rename(
+    tot_pop_bk = tot_pop_block,
+    tot_hh_blk = total_hh_block
+  )
+
 # create a new dataframe with only needed columns
 df_joined <- df_joined %>%
-  select(GEO_ID, NAME, tract_id_synth, total_hh_block, tot_pop_block, tot_empl, low_wage, mid_wage, high_wage, est_hh_u60k, est_hh_01v, est_disabl, est_eng_nw, est_youth, est_eldrly, est_minrty, est_grnwrk)
+  select(GEO_ID, NAME, tract_id_synth, tot_hh_blk, tot_pop_bk, tot_empl, low_wage, mid_wage, high_wage, est_hh_u60k, est_hh_01v, est_disabl, est_eng_nw, est_youth, est_eldrly, est_minrty, est_grnwrk)
 
 print(df_joined)
 
@@ -822,7 +829,7 @@ sf_tracts <- sf_tracts %>%
   left_join(df_joined, by = c("tract_id_synth"))
 
 # Get column index for LineAbbr
-county_id_index <- which(colnames(sf_tracts) == "income_u_60k_perc")
+county_id_index <- which(colnames(sf_tracts) == "est_hh_u60k")
 
 # Print first 6 rows of census shapefile attribute table to check for issues
 print("Printing first 6 rows of stops shapefile attribute table:")
