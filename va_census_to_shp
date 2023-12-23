@@ -27,16 +27,27 @@ jurisdiction_ids <- c('11001', '24031', '24033', '51013', '51059', '51107', '511
 
 
 
-# Define shapefile locations for import and export
-
 # Define export shapefile path and name
 shapefile_export_path <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/sf_tracts_09_25_2023.shp"
 
+
+
+# Define import shapefile path(s) and name(s)
 # .shp data source: US Census https://www.census.gov/cgi-bin/geo/shapefiles/index.php
 
-# import census geography shapefile
+# import first census geography shapefile
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_51_tabblock20"
+shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
+
+# import second census geography shapefile (optional)
+shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
+shapefile_name <- "tl_2022_11_tabblock20"
+shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
+
+# import third census geography shapefile (optional)
+shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
+shapefile_name <- "tl_2022_24_tabblock20"
 shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
 
