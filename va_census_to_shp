@@ -38,17 +38,17 @@ shapefile_export_path <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/
 # import first census geography shapefile
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_51_tabblock20"
-shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
+shapefile_path1 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
 # import second census geography shapefile (optional)
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_11_tabblock20"
-shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
+shapefile_path2 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
 # import third census geography shapefile (optional)
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_24_tabblock20"
-shapefile_path <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
+shapefile_path3 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
 
 
@@ -686,8 +686,13 @@ print(df_commute)
 
 ```{r import and filter Tracts .shp}
 
-# Read the shapefile using sf
-sf_tracts <- st_read(dsn = shapefile_path)
+# Read the shapefile(s) using sf
+sf_tracts1 <- st_read(dsn = shapefile_path1)
+sf_tracts2 <- st_read(dsn = shapefile_path2)
+sf_tracts3 <- st_read(dsn = shapefile_path3)
+
+# Merge the sf objects into one sf object
+sf_tracts <- rbind(sf_tracts1, sf_tracts2, sf_tracts3)
 
 # Create a new column named STATE_COUNTY_FP
 sf_tracts <- sf_tracts %>%
