@@ -803,7 +803,7 @@ df_joined <- df_joined %>%
 
 # create a new dataframe with only needed columns
 df_joined <- df_joined %>%
-  select(GEO_ID, NAME, tract_id_synth, total_hh_block, tot_pop_block, tot_empl, low_wage, mid_wage, high_wage, est_hh_income_u_60k, est_hh_veh_0_1_hh, est_disabled, est_all_nwell, est_youth, est_elderly, est_minority, est_sustainable_mode_workers)
+  select(GEO_ID, NAME, tract_id_synth, total_hh_block, tot_pop_block, tot_empl, low_wage, mid_wage, high_wage, est_hh_u60k, est_hh_01v, est_disabl, est_eng_nw, est_youth, est_eldrly, est_minrty, est_grnwrk)
 
 print(df_joined)
 
