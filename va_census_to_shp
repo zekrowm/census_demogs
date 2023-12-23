@@ -791,14 +791,14 @@ df_joined <- left_join(df_joined_blocks, df_joined, by = c("tract_id_synth"))
 # Create new columns in df_joined with the results of all of the given expressions
 df_joined <- df_joined %>%
   mutate(
-    est_hh_income_u_60k = total_hh_block * as.numeric(income_u_60k_perc),
-    est_hh_veh_0_1_hh = total_hh_block * as.numeric(veh_0_1_hh_perc),
-    est_disabled = tot_pop_block * as.numeric(disabled_tract_perc),
-    est_all_nwell = tot_pop_block * as.numeric(all_nwell_perc),
+    est_hh_u60k = total_hh_block * as.numeric(income_u_60k_perc),
+    est_hh_01v = total_hh_block * as.numeric(veh_0_1_hh_perc),
+    est_disabl = tot_pop_block * as.numeric(disabled_tract_perc),
+    est_eng_nw = tot_pop_block * as.numeric(all_nwell_perc),
     est_youth = tot_pop_block * as.numeric(all_youth_perc),
-    est_elderly = tot_pop_block * as.numeric(all_elderly_perc),
-    est_minority = tot_pop_block * as.numeric(all_minority_perc),
-    est_sustainable_mode_workers = tot_pop_block * as.numeric(sustainable_mode_workers_perc)
+    est_eldrly = tot_pop_block * as.numeric(all_elderly_perc),
+    est_minrty = tot_pop_block * as.numeric(all_minority_perc),
+    est_grnwrk = tot_pop_block * as.numeric(sustainable_mode_workers_perc)
   )
 
 # create a new dataframe with only needed columns
