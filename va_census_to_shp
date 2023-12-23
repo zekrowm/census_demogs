@@ -22,30 +22,30 @@ library(data.table)
 
 
 
-# Define jurisdiction IDs to keep
+# Define jurisdiction IDs to keep, note that the first two digits are state codes
 jurisdiction_ids <- c('11001', '24031', '24033', '51013', '51059', '51107', '51153', '51510', '51600', '51610', '51683', '51685')
 
 
 
 # Define export shapefile path and name
-shapefile_export_path <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/sf_tracts_09_25_2023.shp"
+shapefile_export_path <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/sf_blocks_12_23_2023.shp"
 
 
 
 # Define import shapefile path(s) and name(s)
 # .shp data source: US Census https://www.census.gov/cgi-bin/geo/shapefiles/index.php
 
-# import first census geography shapefile
+# import first census block geography shapefile
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_51_tabblock20"
 shapefile_path1 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
-# import second census geography shapefile (optional)
+# import second census block geography shapefile (optional)
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_11_tabblock20"
 shapefile_path2 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 
-# import third census geography shapefile (optional)
+# import third census block geography shapefile (optional)
 shapefile_dir <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project"
 shapefile_name <- "tl_2022_24_tabblock20"
 shapefile_path3 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
@@ -60,6 +60,10 @@ shapefile_path3 <- file.path(shapefile_dir, paste0(shapefile_name, ".shp"))
 va_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/va_wac_S000_JT00_2020.csv.gz"
 md_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/md_wac_S000_JT00_2020.csv.gz"  
 dc_file <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/dc_wac_S000_JT00_2020.csv.gz"
+
+# Population placeholder
+
+# HH Size placeholder
 
 
 
@@ -138,7 +142,7 @@ print(df_jobs)
 
 ```{r Population for block}
 
-# POPULATION TOTAL -BLOCK
+# POPULATION TOTAL - POP - BLOCK LEVEL
 # Table P1
 
 # Import the file
@@ -206,7 +210,7 @@ print(df_household)
 
 ```{r Race Ethnicity}
 
-# RACE AND ETHNICITY - PEOPLE - BLOCK
+# RACE AND ETHNICITY (PEOPLE) block data is available, tract is used here
 # Table P2
 
 
@@ -272,7 +276,7 @@ print(df_racehisp)
 
 ```{r Low Income}
 
-#LOW INCOME - HOUSEHOLD - BLOCK GROUP
+#LOW INCOME (HOUSEHOLD) block group level is available, tract used here
 # Table B19001
 
 # Read the census data, specifying the type of data for the GEO_ID column
@@ -336,7 +340,7 @@ print(df_income)
 
 ```{r Elderly Youth}
 
-#ELDERLY & YOUTH - PEOPLE - BLOCK GROUP
+#ELDERLY & YOUTH (PEOPLE) block group is available, tract is used here
 # Table B01001
 
 
@@ -411,7 +415,7 @@ print(df_age)
 
 ```{r LEP}
 
-#LOW ENGLISH PROFICIENCY - PEOPLE - TRACT
+#LOW ENGLISH PROFICIENCY (PEOPLE) tract
 # Table C16001
 
 
@@ -534,7 +538,7 @@ print(df_vehicles)
 
 ```{r Disabled}
 
-# DISABLED - PEOPLE - TRACT
+# DISABLED (PEOPLE) tract
 # Table B18101
 
 
@@ -610,7 +614,7 @@ print(df_disabled)
 
 ```{r Commute}
 
-# COMMUTE - WORKERS - TRACT
+# COMMUTE (WORKERS) tract
 # Table S0801
 
 
