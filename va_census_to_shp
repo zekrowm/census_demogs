@@ -78,22 +78,22 @@ racehisp_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_pr
 #racehisp_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/DECENNIALPL2020.P2-Data.csv"
 
 # Specify file location for income chunk
-income_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2021.B19001-Data.csv"
+income_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2022.B19001-Data.csv"
 
 # Specify file location for age chunk
-age_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2021.B01001-Data.csv"
+age_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2022.B01001-Data.csv"
 
 # Specify file location for disabled chunk
-disabled_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2021.B18101-Data.csv"
+disabled_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2022.B18101-Data.csv"
 
 # Specify file location for language chunk
-lep_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2021.C16001-Data.csv"
+lep_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2022.C16001-Data.csv"
 
 # Specify file location for vehicles chunk
-vehicles_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2021.B08201-Data.csv"
+vehicles_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSDT5Y2022.B08201-Data.csv"
 
 # Specify file location for commute chunk
-commute_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSST5Y2021.S0801-Data.csv"
+commute_data_file_location <- "C:/Users/zach/Documents/r_stuff/census_to_shp_project/ACSST5Y2022.S0801-Data.csv"
 
 ```
 
