@@ -234,6 +234,10 @@ df_racehisp <- df_racehisp %>% rename(
   nhisp_multirac = P2_011N
 )
 
+# Replace "," with ";" in the NAME column
+# Fixes error in this .csv which prevents join with others
+df_racehisp$NAME <- gsub(",", ";", df_racehisp$NAME)
+
 # Convert all numeric columns to numeric
 numeric_columns <- names(df_racehisp)[-c(1,2)]
 df_racehisp[numeric_columns] <- lapply(df_racehisp[numeric_columns], as.integer)
