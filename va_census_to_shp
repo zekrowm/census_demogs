@@ -6,7 +6,9 @@
 # some renaming and selection of columns and calculations are done also
 # focus on jobs, income, race, disability, language, and other demographics
 # considered relevant for transit service
-# Functional improvements would be: 1) MD & VA .csv data 2) amend to calculate percent of residents who are workers and est_ in each block, just like sustainable_mode_workers_perc
+# Functional improvements would be: 1) MD & VA .csv data 
+# 2) amend to calculate percent of residents who are workers and est_ in each block, just like sustainable_mode_workers_perc
+# 3) create 0, 1, 0-1 veh HH column for export
 
 ```
 
