@@ -25,7 +25,8 @@ library(data.table)
 
 
 # Define jurisdiction IDs to keep, note that the first two digits are state codes
-# District of Columbia, Montgomery County, Prince George's County, Unknown, Fairfax County, Unknown, Unknown, Unknown, Unknown, Unknown, Unknown, Unknown, Unknown,
+# Source for state codes: https://www.census.gov/library/reference/code-lists/ansi.html#cou
+# District of Columbia, Montgomery County, Prince George's County, Arlington County, Fairfax County, Loudoun County, Prince William County, Alexandria City, Fairfax City, Falls Church City, Manassas City, Manassas Park City
 jurisdiction_ids <- c('11001', '24031', '24033', '51013', '51059', '51107', '51153', '51510', '51600', '51610', '51683', '51685')
 
 
