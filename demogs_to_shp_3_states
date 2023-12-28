@@ -693,6 +693,9 @@ sf_tracts3 <- st_read(dsn = shapefile_path3)
 # Merge the sf objects into one sf object
 sf_tracts <- rbind(sf_tracts1, sf_tracts2, sf_tracts3)
 
+# Transform to NAD83 / UTM zone 18N (EPSG: 26918)
+sf_tracts <- st_transform(sf_tracts, crs = 26918)
+
 # Create a new column named STATE_COUNTY_FP
 sf_tracts <- sf_tracts %>%
   mutate(STATE_COUNTY_FP = paste(STATEFP20, COUNTYFP20, sep = ""))
