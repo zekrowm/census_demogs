@@ -696,6 +696,9 @@ sf_tracts <- rbind(sf_tracts1, sf_tracts2, sf_tracts3)
 # Transform to NAD83 / UTM zone 18N (EPSG: 26918)
 sf_tracts <- st_transform(sf_tracts, crs = 26918)
 
+# Ensure all geometries are valid
+sf_tracts <- st_make_valid(sf_tracts)
+
 # Create a new column named STATE_COUNTY_FP
 sf_tracts <- sf_tracts %>%
   mutate(STATE_COUNTY_FP = paste(STATEFP20, COUNTYFP20, sep = ""))
