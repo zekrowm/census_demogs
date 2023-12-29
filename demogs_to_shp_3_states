@@ -685,16 +685,13 @@ print(df_commute)
 
 # tot_pop_block and other data never got joined to block .shp
 
-# Read the shapefile(s) using sf
-sf_tracts1 <- st_read(dsn = shapefile_path1)
-sf_tracts2 <- st_read(dsn = shapefile_path2)
-sf_tracts3 <- st_read(dsn = shapefile_path3)
+# Read and immediately project each shapefile to NAD83 / UTM zone 18N
+sf_tracts1 <- st_transform(st_read(dsn = shapefile_path1), crs = 26918)
+sf_tracts2 <- st_transform(st_read(dsn = shapefile_path2), crs = 26918)
+sf_tracts3 <- st_transform(st_read(dsn = shapefile_path3), crs = 26918)
 
 # Merge the sf objects into one sf object
 sf_tracts <- rbind(sf_tracts1, sf_tracts2, sf_tracts3)
-
-# Transform to NAD83 / UTM zone 18N (EPSG: 26918)
-sf_tracts <- st_transform(sf_tracts, crs = 26918)
 
 # Ensure all geometries are valid
 sf_tracts <- st_make_valid(sf_tracts)
