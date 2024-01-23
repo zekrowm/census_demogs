@@ -305,7 +305,8 @@ df_income <- df_income %>% filter(df_jurisdiction_id %in% jurisdiction_ids)
 
 # Sum all relevant columns together, then divide by total hhs
 df_income <- df_income %>%
-  mutate(income_u_60k = income_u_10k + income_10k_15k + income_15k_20k) %>%
+  mutate(income_u_60k = income_u_10k + income_10k_15k + income_15k_20k + income_20k_25k + income_25k_30k + 
+           income_30k_35k + income_35k_40 + income_40k_45 + income_45k_50k + income_50k_60k) %>%
   mutate(income_u_60k_perc = income_u_60k / total_hh)
 
 # Round "income_u_60k_perc" to 4 decimal places
